@@ -7,11 +7,11 @@ print(word_list)
 
 # %% # Task 2- use random choice
 word = random.choice(word_list)
-word = word.lower()
+wordl = word.lower()
 print(word)
 # %%
 
 guess = input("Please input a single letter: ")
-guess = str(guess).lower()
+guessl = str(guess).lower()
 
 # %%
