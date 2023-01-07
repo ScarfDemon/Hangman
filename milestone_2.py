@@ -9,9 +9,18 @@ print(word_list)
 word = random.choice(word_list)
 wordl = word.lower()
 print(word)
-# %%
+# %% # Task 3- input guess letter
 
 guess = input("Please input a single letter: ")
 guessl = str(guess).lower()
+
+
+
+# %%
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+if (len(guessl) == 1) and (guessl in alphabet):
+    print("Good guess!")
+else:
+    print("Oops! That is not a valid input.")
 
 # %%
