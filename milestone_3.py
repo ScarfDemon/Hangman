@@ -1,4 +1,4 @@
-# %%
+# %% Randomised word from list of most common words
 import random
 word_list = [i for i in list((open('1-1000.txt','r').read()).split("\n")) if len(i)>2]
 word = random.choice(word_list)
@@ -12,7 +12,7 @@ while True:
         print("Invalid letter. Please, enter a single alphabetical character.")
         continue
 
-# %%
+# %% Task 2- Check whether the guess is in the word
 
 if guess.lower() in word.lower():
     print(f"Good guess! {guess} is in the word.")
