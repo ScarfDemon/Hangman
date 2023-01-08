@@ -7,18 +7,16 @@ print(word_list)
 
 # %% # Task 2- use random choice
 word = random.choice(word_list)
-wordl = word.lower()
 print(word)
 # %% # Task 3- input guess letter
 
 guess = input("Please input a single letter: ")
-guessl = str(guess).lower()
 
 
 
-# %%
+# %% Task 4- check input is a single letter
 
-if (len(guessl) == 1) and guessl.isalpha():
+if (len(guess) == 1) and guess.isalpha():
     print("Good guess!")
 else:
     print("Oops! That is not a valid input.")
