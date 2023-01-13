@@ -18,3 +18,11 @@ Milestone 3 creates two functions that serve to complete checks:
     This function checks if the character guessed is in the randomised word. 
 
 During this milestone, the word list used to selected a random word for the game was changed. Previously, this was a short list of 5 words. This was changed to a list of the 1000 most common words, where only words greater than 2 characters was used in the word list. 
+
+## Milestone 4
+Milestone 4 creates a Hangman class and initialises attributes including the random word (randomised from the passed parameter "word_list") and number of lives (default 5 lives).
+
+The ask_for_input method was updated so that if a guess was already made, it printed "You already guessed that letter!".
+
+The check_guess method was updated so that if a letter was guessed correctly, every underscore in the word_guessed attribute (Underscores representing each letter in the word to be guessed) that had the correctly guessed letter was replaced by the letter. e.g. if the word was 'cat' and 'a' was guessed, word_guessed would change from _ _ _  to _ a _
+Furthermore, if the letter guessed is not in the word, the number of lives decreases by one.
