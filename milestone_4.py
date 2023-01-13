@@ -11,7 +11,7 @@ class Hangman:
         self.word = random.choice(word_list)
         self.unique_letters = set([i for i in self.word])
         self.word_guessed = ['_']*len(self.word)
-        self.list_of_guesses = []
+        self.list_of_guesses = ['a']
         self.num_letters = len(set(self.word))
     
     def check_guess(self, guess):
@@ -33,6 +33,7 @@ class Hangman:
                 print("You already tried that letter!")
                 continue
             else:
+                self.list_of_guesses.append(guess)
                 self.check_guess(guess)
                 break
 
@@ -45,3 +46,5 @@ class Hangman:
 # %%
 Hangman(word_list).ask_for_input()
 
+
+# %%
