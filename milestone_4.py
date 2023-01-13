@@ -9,7 +9,6 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
-        #self.unique_letters = set([i for i in self.word])
         self.word_guessed = ['_']*len(self.word)
         self.list_of_guesses = []
         self.num_letters = len(set(self.word))
@@ -21,12 +20,12 @@ class Hangman:
             for i in range(len(self.word)-1):
                     if guess == self.word[i]:
                         self.word_guessed[i] = guess
-                        #self.unique_letters.remove(guess)
             self.num_letters -= 1
-        
-            
         else:
-            print(f"Sorry, {guess} is not in the word. Try again.")
+            self.num_lives -= 1
+            print(f"Sorry, {guess} is not in the word.")
+            print(f"You have {self.num_lives} left.")
+        self.list_of_guesses.append(guess)
              
 
     def ask_for_input(self):
@@ -51,3 +50,16 @@ Hangman(word_list).ask_for_input()
 
 
 # %%
+'''Define what happens if the guess is not in the word you are trying to guess.
+
+Step 1. In the check_guess method, Create an else statement.
+
+Step 2: Within the else block:
+
+Reduce `num_lives' by 1.
+
+print a message saying "Sorry, {letter} is not in the word."
+
+print another message saying "You have {num_lives} lives left."
+
+Step 3. Lastly, append the guess to the list_of_guesses. Ensure you do this outside the else block so that the letter can be appended to the list_of_guesses in both conditions.'''
