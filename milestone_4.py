@@ -9,7 +9,7 @@ class Hangman:
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
-        self.unique_letters = set([i for i in self.word])
+        #self.unique_letters = set([i for i in self.word])
         self.word_guessed = ['_']*len(self.word)
         self.list_of_guesses = []
         self.num_letters = len(set(self.word))
@@ -18,10 +18,16 @@ class Hangman:
         guess = guess.lower()
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
-            #guess = input("Please enter another letter: ") 
+            for i in range(len(self.word)-1):
+                    if guess == self.word[i]:
+                        self.word_guessed[i] = guess
+                        #self.unique_letters.remove(guess)
+            self.num_letters -= 1
+        
+            
         else:
             print(f"Sorry, {guess} is not in the word. Try again.")
-            #guess = input("Please enter a letter: ")  
+             
 
     def ask_for_input(self):
         while True:
@@ -37,10 +43,7 @@ class Hangman:
                 self.check_guess(guess)
                 break
 
-        #         for i in range(len(self.word)-1):
-        #             if self.guess == self.word[i]:
-        #                 self.word[i] = self.guess
-        #                 self.unique_letters.remove(self.guess)
+                
         # 
 
 # %%
