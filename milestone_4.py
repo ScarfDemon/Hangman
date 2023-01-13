@@ -34,6 +34,7 @@ class Hangman:
                 continue
             else:
                 self.check_guess(guess)
+                break
 
         #         for i in range(len(self.word)-1):
         #             if self.guess == self.word[i]:
