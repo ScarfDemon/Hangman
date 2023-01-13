@@ -36,3 +36,5 @@ Milestone 5 creates a play_game function within which Hangman is initialised as 
 If the number of lives is not zero, and there are no more letters to guess in the num_letters atribute, the player has won!
 
 Here, I have also added a hint method. If the input for the guessed letter is 'hint', a random letter in the word is chosen and each '_' containing that random letter is filled in.
+
+I also added comments on everything so I don't forget what is going on everytime I want to redo something.
