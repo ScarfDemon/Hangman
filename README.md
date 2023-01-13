@@ -24,5 +24,15 @@ Milestone 4 creates a Hangman class and initialises attributes including the ran
 
 The ask_for_input method was updated so that if a guess was already made, it printed "You already guessed that letter!".
 
-The check_guess method was updated so that if a letter was guessed correctly, every underscore in the word_guessed attribute (Underscores representing each letter in the word to be guessed) that had the correctly guessed letter was replaced by the letter. e.g. if the word was 'cat' and 'a' was guessed, word_guessed would change from _ _ _  to _ a _
+The check_guess method was updated so that if a letter was guessed correctly, every underscore in the word_guessed attribute (Underscores representing each letter in the word to be guessed) that had the correctly guessed letter was replaced by the letter. 
+
+    e.g. if the word was 'cat' and 'a' was guessed, word_guessed would change from ['_', '_', '_']  to ['_', 'a', '_']
+
 Furthermore, if the letter guessed is not in the word, the number of lives decreases by one.
+
+## Milestone 5
+Milestone 5 creates a play_game function within which Hangman is initialised as 'game'. 
+
+If the number of lives is not zero, and there are no more letters to guess in the num_letters atribute, the player has won!
+
+Here, I have also added a hint method. If the input for the guessed letter is 'hint', a random letter in the word is chosen and each '_' containing that random letter is filled in.
