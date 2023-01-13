@@ -3,18 +3,18 @@ word_list = [i for i in list((open('1-1000.txt','r').read()).split("\n")) if len
 
 
 class Hangman:
-    def __init__(self, word_list, guess, num_lives = 5):
+    def __init__(self, word_list, num_lives = 5):
         self.word_list = word_list
         self.num_lives = num_lives
         self.word = random.choice(word_list)
         self.unique_letters = set([i for i in self.word])
         self.word_guessed = ['_']*len(self.word)
         self.number_of_guesses = []
-        self.guess = guess
-        for i in range(len(self.word)-1):
-            if self.guess == self.word[i]:
-                self.word[i] = self.guess
-                self.unique_letters.remove(self.guess)
+        # self.guess = guess
+        # for i in range(len(self.word)-1):
+        #     if self.guess == self.word[i]:
+        #         self.word[i] = self.guess
+        #         self.unique_letters.remove(self.guess)
         self.num_letters = len(set(self.word))
     
     # def check_guess(guess):
