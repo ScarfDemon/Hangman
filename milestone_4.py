@@ -9,7 +9,7 @@ class Hangman:
         self.word = random.choice(word_list)
         self.unique_letters = set([i for i in self.word])
         self.word_guessed = ['_']*len(self.word)
-        self.number_of_guesses = []
+        self.list_of_guesses = []
         # self.guess = guess
         # for i in range(len(self.word)-1):
         #     if self.guess == self.word[i]:
