@@ -14,7 +14,7 @@ class Hangman:
         self.num_letters = len(set(self.word))
     
     def check_guess(self, guess):
-        
+
         guess = guess.lower()
         self.list_of_guesses.append(guess)
 
@@ -53,16 +53,3 @@ Hangman(word_list).ask_for_input()
 
 
 # %%
-'''Define what happens if the guess is not in the word you are trying to guess.
-
-Step 1. In the check_guess method, Create an else statement.
-
-Step 2: Within the else block:
-
-Reduce `num_lives' by 1.
-
-print a message saying "Sorry, {letter} is not in the word."
-
-print another message saying "You have {num_lives} lives left."
-
-Step 3. Lastly, append the guess to the list_of_guesses. Ensure you do this outside the else block so that the letter can be appended to the list_of_guesses in both conditions.'''
