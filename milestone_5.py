@@ -48,7 +48,6 @@ class Hangman:
                 continue #letter guessed shouldn't already be in list_of_guesses
             elif 'hint' in guess: #hint input hint method
                 self.hint()
-                break
             elif ('letter' in guess) or ('guess' in guess): #if I ask eg What letters have I guessed?
                 print(set(self.list_of_guesses) if len(self.list_of_guesses)>0 else None) # print every letter I've guessed, if no letters guessed, print None
             elif not ((len(guess) == 1) and guess.isalpha()): #guessed letter must be single alphabetical character
@@ -86,7 +85,7 @@ def play_game(word_list):
             break
 
 # %%
-list_of_words = [i for i in list((open('1-1000.txt','r').read()).split("\n")) if len(i)>2]
+list_of_words = [i for i in list((open('1-1000.txt','r').read()).split("\n")) if len(i)>2] #file of common words; filter all words greater than 2 characters (get of rid of eg 'to', 'a')
 play_game(list_of_words)
 
 # %%
