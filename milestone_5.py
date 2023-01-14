@@ -72,7 +72,7 @@ class Hangman:
 
 # %%
 def play_game(word_list):
-    game = Hangman(word_list, num_lives=10) #instance of Hangman game
+    game = Hangman(word_list, num_lives = 4) #instance of Hangman game
     print('\n','  '.join(game.word_guessed)) #initial state of word_guessed (underscores length of word)
     while True:
         if game.num_lives == 0:
