@@ -6,12 +6,12 @@ word_list = [i for i in list((open('1-1000.txt','r').read()).split("\n")) if len
 
 class Hangman:
     def __init__(self, word_list, num_lives = 5):
-        self.word_list = word_list
-        self.num_lives = num_lives
-        self.word = random.choice(word_list)
-        self.word_guessed = ['_']*len(self.word)
-        self.list_of_guesses = []
-        self.num_letters = len(set(self.word))
+        self.word_list = word_list #list of words random word will be chosen from
+        self.num_lives = num_lives #number of lives left
+        self.word = random.choice(word_list) #random word for guessing- chosen from word list
+        self.word_guessed = ['_']*len(self.word) #existing state of guessed word where underscore is unguessed character; and letter is guessed character
+        self.list_of_guesses = [] #list of every guess made
+        self.num_letters = len(set(self.word)) #number of unique letters = number of correct guesses
     
     def check_guess(self, guess):
 
@@ -43,7 +43,6 @@ class Hangman:
                 break
 
                 
-        # 
 
 # %%
 Hangman(word_list).ask_for_input()
