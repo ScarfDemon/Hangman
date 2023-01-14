@@ -55,15 +55,20 @@ class Hangman:
                 break
     
     def hint(self):
+        
         hint_letter = random.choice(list(set(self.unique_letters_left))) #out of the remaining letters in the word to be guessed, choose random letter
         print(f'Hint letter: {hint_letter}')
+        
         for i in range(len(self.word)):
             if hint_letter == self.word[i]: # if the chosen letter (for hint) is the ith character of the word
                 self.word_guessed[i] = hint_letter #replace the ith character of the word_guessed (which should be '_') with the hint letter
+        
         self.num_letters -= 1 #number of unique letters in the word left to guess -1; (see play_game) if > 1, continue game and ask for input
         self.unique_letters_left.remove(hint_letter)
+        self.list_of_guesses.append(hint_letter) #add hint letter to list_of_guesses so the hint letter can't be guessed again
+        
         print('  '.join(self.word_guessed)) #print new state of word_guessed (with the hint letters filled in)
-        self.list_of_guesses.append(hint_letter)
+        
 
 # %%
 def play_game(word_list):
