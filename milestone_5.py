@@ -30,15 +30,10 @@ class Hangman:
         else:
             self.num_lives -= 1 #incorrectly guessed reduce lives by 1
             print(f"Sorry, {guess} is not in the word.")
-            if self.num_lives == 1: #print you have x lives/life left
-                life_s = 'life'
-            else:
-                life_s = 'lives'
-            print(f"You have {self.num_lives} {life_s} left.")
+            print("You have {s} {l} left.".format(s=self.num_lives, l= 'life' if self.num_lives==1 else 'lives')) #print you have x lives/life left
         
         print('  '.join(self.word_guessed)) #prints word guessed so far but without the ['']
         
-             
 
     def ask_for_input(self):
         while True: #loop until a valid input (single letter, asking guessed letters, hint)
