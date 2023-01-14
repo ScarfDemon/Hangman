@@ -43,6 +43,7 @@ class Hangman:
                 continue #letter guessed shouldn't already be in list_of_guesses
             elif 'hint' in guess: #hint input hint method
                 self.hint()
+                break
             elif ('letter' in guess) or ('guess' in guess): #if I ask eg What letters have I guessed?
                 print(set(self.list_of_guesses) if len(self.list_of_guesses)>0 else None) # print every letter I've guessed, if no letters guessed, print None
             elif not ((len(guess) == 1) and guess.isalpha()): #guessed letter must be single alphabetical character
@@ -62,7 +63,7 @@ class Hangman:
         self.num_letters -= 1 #number of unique letters in the word left to guess -1; (see play_game) if > 1, continue game and ask for input
         self.unique_letters_left.remove(hint_letter)
         print('  '.join(self.word_guessed)) #print new state of word_guessed (with the hint letters filled in)
-
+        self.list_of_guesses.append(hint_letter)
 
 # %%
 def play_game(word_list):
