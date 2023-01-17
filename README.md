@@ -1,5 +1,5 @@
 # Hangman
-In this game of hangman, the computer takes a random word from a list of commonly used words. The player then tries to guess the word letter by letter, asking for hints if necessary. The player has a limited number of lives as in a regular hangman game. ==test== 
+In this game of hangman, the computer takes a random word from a list of commonly used words. The player then tries to guess the word letter by letter, asking for hints if necessary. The player has a limited number of lives as in a regular hangman game.
 
 ## Generating a random word
 The file [1-1000.txt](https://gist.github.com/deekayen/4148741#file-1-1000-txt) contains a list of commonly used words. This list is then filtered such that the new list only contains words with more than three letters (so that we are not guessing 'a' or 'to' etc.). 
